@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:5001:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    tty: true
+    stdin_open: true
+    # command: bash -c "bun run dev"
+
+    # storybook:
+    #   build: .
+    #   ports:
+    #     - "6006:6006"
+    #   volumes:
+    #     - .:/app
+    #     - /app/node_modules
+    #   tty: true
+    #   stdin_open: true
+    #   command: bash -c "bun run storybook"
